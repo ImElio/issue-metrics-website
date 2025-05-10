@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue-Metrics Badge Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="card">
+        <!-- HEADER -->
+    <h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+      Issue-Metrics Badge
+    </h1>
+
+    <!-- FORM -->
+    <div class="form-grid">
+        <label>
+            <span>Repository (username/repo)</span>
+            <input id="repoInput" placeholder="vercel/next.js">
+        </label>
+        <label>
+            <span>Theme</span>
+            <select id="themeSelect">
+                <option value="light" selected>Light(Default)</option>
+                <option value="dark">Dark</option>
+                <option value="terminal">Terminal</option>
+            </select>
+        </label>
+        <label>
+            <span>Labels (optionals, comma-separated)<br>UNDER TESTING</br></span>
+            <input id="labelsInput" placeholder="bug,documentation">
+        </label>
+    </div>
+
+
+    <!-- PREVIEW -->
+    <div class="preview" id="prevBox">
+        <img id="badgeImg" alt="badge Preview">
+        <p id="errMsg" class="error-text">Error loading Badge</p>
+    </div>
+
+
+    <!-- MARKDOWN OUTPUT -->
+    <label class="md-label">
+        <span>Markdown for README</span>
+        <textarea id="mdOutput" rows="3"></textarea>
+    </label>
+    <button id="copyBtn" class="btn btn-purple">Copy to Clipboard</button>
+
+
+    <!-- SHOW ERORR BUTTON -->
+        <button id="toggleErrors" class="btn btn-outline">Possible errors »</button>
+
+    <!-- error TABLE -->
+     <div id="errorsWrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Error</th>
+                    <th style="width: 45%;">Badge</th>
+                </tr>
+            </thead>
+            <tbody id="errTable"></tbody>
+        </table>
+     </div>
+    </div>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+</body>
+</html>
