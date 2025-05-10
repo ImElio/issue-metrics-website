@@ -24,7 +24,7 @@ function updatePreview() {
     return;
   }
   badgeImg.src = url;
-  mdOutput.value = `![GitHub Issues](${url})`;
+  mdOutput.value = `![Issue-Metrics](${url})`;
 }
 
 badgeImg.onerror = () => {
